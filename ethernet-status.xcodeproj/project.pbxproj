@@ -21,6 +21,7 @@
 		EF2175B32A44776E002381DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF2175B52A44776E002381DD /* ethernet_status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ethernet_status.entitlements; sourceTree = "<group>"; };
 		EFE6AEB92A45834800D44F0D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EFE6AEBA2A45884900D44F0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		EF2175AB2A44776D002381DD /* ethernet-status */ = {
 			isa = PBXGroup;
 			children = (
+				EFE6AEBA2A45884900D44F0D /* Info.plist */,
 				EF2175AC2A44776D002381DD /* ethernet_statusApp.swift */,
 				EF2175AE2A44776D002381DD /* ContentView.swift */,
 				EF2175B02A44776E002381DD /* Assets.xcassets */,
@@ -272,8 +274,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ethernet-status/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Y746A2BHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ethernet-status/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,12 +297,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "ethernet-status/ethernet_status.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ethernet-status/Preview Content\"";
+				DEVELOPMENT_TEAM = 8Y746A2BHG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ethernet-status/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
