@@ -20,6 +20,7 @@
 		EF2175B02A44776E002381DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF2175B32A44776E002381DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EF2175B52A44776E002381DD /* ethernet_status.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ethernet_status.entitlements; sourceTree = "<group>"; };
+		EFE6AEB92A45834800D44F0D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 		EF2175A02A44776D002381DD = {
 			isa = PBXGroup;
 			children = (
+				EFE6AEB92A45834800D44F0D /* README.md */,
 				EF2175AB2A44776D002381DD /* ethernet-status */,
 				EF2175AA2A44776D002381DD /* Products */,
 			);
