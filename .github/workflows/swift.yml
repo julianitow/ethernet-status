@@ -51,12 +51,13 @@ jobs:
         with:
           bump_version_scheme: patch
           release_name: reellize
-      - name: Upload artifact
+      - name: Upload Release Asset
         id: upload-release-asset 
-        uses: Fhwang0926/upload-release-asset@v1.1.17
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.publish_release.outputs.upload_url }}
+          asset_path: ./${{ env.ARTIFACT_NAME }}
           asset_name: ${{ env.ARTIFACT_NAME }}
-          asset_label: latest
+          asset_content_type: application/zip
