@@ -9,6 +9,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  ARTIFACT_NAME: EthernetStatus.app.zip
+
 jobs:
   build:
     runs-on: macos-latest
@@ -29,17 +32,21 @@ jobs:
         if: ${{ success() }}
         uses: actions/upload-artifact@v2
         with:
-          name: EthernetStatus.app.zip
+          name: ${{ env.ARTIFACT_NAME }}
           path: dist/Build/Products/Release/*.app
 
   release:
       runs-on: ubuntu-latest
+      needs: build
       steps:
-      - name: Release
+      - name: Download generated artifcat
+        uses: actions/download-artifact@v2
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+      - name: Publish release
         uses: rymndhng/release-on-push-action@master
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           bump_version_scheme: patch
-          max_commits: 5
           release_name: reellize
