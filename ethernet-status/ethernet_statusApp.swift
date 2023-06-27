@@ -11,7 +11,7 @@ import Network
 @main
 struct ethernet_statusApp: App {
     
-    let monitorQueue = DispatchQueue.global(qos: .background)
+    let monitorQueue = DispatchQueue.global(qos: .utility)
     let monitor = NWPathMonitor()
     
     @AppStorage("ethernet") private var ethernet: Bool = false
@@ -22,10 +22,10 @@ struct ethernet_statusApp: App {
     
     func monitorConnectivity() {
         monitor.pathUpdateHandler = { path in
-            if path.usesInterfaceType(.wiredEthernet) {
-                self.ethernet = true
-            } else {
+            if path.usesInterfaceType(.wifi) {
                 self.ethernet = false
+            } else {
+                self.ethernet = true
             }
         }
         monitor.start(queue: monitorQueue)
