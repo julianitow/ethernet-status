@@ -44,9 +44,14 @@ jobs:
         with:
           name: ${{ env.ARTIFACT_NAME }}
       - name: Publish release
+        id: publish_release
         uses: rymndhng/release-on-push-action@master
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           bump_version_scheme: patch
           release_name: reellize
+      - name: Upload artifact
+        env:
+          RELEASE_UPLOAD_URL: ${{ steps.publish_release.outputs.upload_url }}
+        run: echo "RELEASE UPLOAD URL =>" $RELEASE_UPLOAD_URL
