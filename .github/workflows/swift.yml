@@ -25,6 +25,8 @@ jobs:
         with:
           action: none
       - run: xcodebuild -project ethernet-status.xcodeproj -scheme ethernet-status -destination platform=macOS build -configuration Release | xcpretty --color
+      - name: Debug build output
+        run: ls -la ./**/*
       - name: Upload artifact
         if: ${{ success() }}
         uses: actions/upload-artifact@v2
