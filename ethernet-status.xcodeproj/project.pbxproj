@@ -272,7 +272,7 @@
 				CODE_SIGN_ENTITLEMENTS = "ethernet-status/ethernet_status.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ethernet-status/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Y746A2BHG;
 				ENABLE_PREVIEWS = YES;
@@ -302,7 +302,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ethernet-status/Preview Content\"";
 				DEVELOPMENT_TEAM = 8Y746A2BHG;
 				ENABLE_PREVIEWS = YES;
