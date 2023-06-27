@@ -25,39 +25,15 @@ jobs:
         with:
           action: none
       - run: xcodebuild -project ethernet-status.xcodeproj -scheme ethernet-status -destination platform=macOS build -configuration Release -derivedDataPath dist | xcpretty --color
-      - name: Debug build output
-        run: ls -la ./**/*
       - name: Upload artifact
         if: ${{ success() }}
         uses: actions/upload-artifact@v2
         with:
           name: EthernetStatus.app.zip
           path: dist/Build/Products/Release/*.app
-  #release:
-  #  runs-on: macos-latest
-  #  steps:
-  #  - name: Create Draft Release
-  #    id: create_release
-  #    uses: actions/create-release@v1
-  #    env:
-  #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #    with:
-  #      tag_name: <tofill>
-  #      release_name: <tofill>
-  #      draft: true
-  #      prerelease: true
-#
-  #  - uses: actions/upload-release-asset@v1.0.1
-  #    env:
-  #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #    with:
-  #      upload_url: ${{ steps.create_release.outputs.upload_url }}
-  #      asset_path: ./EthernetStatus.app.zip
-  #      asset_name: EthernetStatus.app.zip
-  #      asset_content_type: application/zip
-#
-  #  - uses: eregon/publish-release@v1
-  #    env:
-  #      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #    with:
-  #      release_id: ${{ steps.create_release.outputs.id }}
+      - name: Release
+        uses: rymndhng/release-on-push-action@master
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          bump_version_scheme: minor
