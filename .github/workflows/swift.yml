@@ -15,9 +15,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: sersoft-gmbh/xcodebuild-action@v2
+      - uses: mxcl/xcodebuild@v1
         with:
-          project: ethernet-status.xcodeproj
-          scheme: ethernet-status
-          destination: platform=macOS
-          action: build
+          action: none
+      - run: xcodebuild -project ethernet-status.xcodeproj -scheme ethernet-status -destination platform=macOS build
