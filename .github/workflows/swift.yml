@@ -18,6 +18,6 @@ jobs:
       - uses: sersoft-gmbh/xcodebuild-action@v2
         with:
           project: ethernet-status.xcodeproj
-          scheme: EthernetStatus
+          scheme: ethernet-status
           destination: platform=macOS
           action: build
