@@ -31,6 +31,10 @@ jobs:
         with:
           name: EthernetStatus.app.zip
           path: dist/Build/Products/Release/*.app
+
+  release:
+      runs-on: ubuntu-latest
+      steps:
       - name: Release
         uses: rymndhng/release-on-push-action@master
         env: 
