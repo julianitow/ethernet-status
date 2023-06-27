@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  ARTIFACT_NAME: EthernetStatus.app.zip
+  ARTIFACT_NAME: ethernet-status.app
 
 jobs:
   build:
