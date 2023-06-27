@@ -15,8 +15,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v
+    - uses: sersoft-gmbh/xcodebuild-action@v2.0.1
+    - with:
+       project: ethernet-status.xcodeproj
+       scheme: EthernetStatus
+       destination: platform=macOS
+       action: build
