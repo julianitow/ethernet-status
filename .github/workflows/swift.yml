@@ -21,7 +21,7 @@ jobs:
           p12-file-base64: ${{ secrets.CERTIFICATES_P12 }}
           p12-password: ${{ secrets.CERTIFICATES_P12_PASSWORD }}
       - name: Build application
-        uses: mxcl/xcodebuild@v1
+        uses: mxcl/xcodebuild@v2
         with:
           action: none
       - run: xcodebuild -project ethernet-status.xcodeproj -scheme ethernet-status -destination platform=macOS build -configuration Release -derivedDataPath dist | xcpretty --color
