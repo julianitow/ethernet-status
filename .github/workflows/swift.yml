@@ -45,7 +45,7 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
       - name: Publish release
         id: publish_release
-        uses: rymndhng/release-on-push-action@master
+        uses: DasBen/release-on-push-action@master ## insteand of official repo: rymndhng/release-on-push-action because of PR:https://github.com/rymndhng/release-on-push-action/pull/88
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
