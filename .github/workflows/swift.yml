@@ -40,4 +40,6 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          bump_version_scheme: minor
+          bump_version_scheme: patch
+          max_commits: 5
+          release_name: reellize
