@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 env:
-  ARTIFACT_NAME: ethernet-status.app
+  ARTIFACT_NAME: ethernet-status.app.zip
 
 jobs:
   build:
@@ -27,13 +27,14 @@ jobs:
         uses: mxcl/xcodebuild@v2
         with:
           action: none
-      - run: xcodebuild -project ethernet-status.xcodeproj -scheme ethernet-status -destination platform=macOS build -configuration Release -derivedDataPath dist | xcpretty --color
+      - run: xcodebuild -project ethernet-status.xcodeproj -scheme ethernet-status -destination platform=macOS build -configuration Release -derivedDataPath dist | xcpretty --color # NEED TO ZIP FILE TO PUBLISH ARTIFACT WORK
+      - run: mv dist/Build/Products/Release/ethernet-status.app ./ && zip -X ${{ env.ARTIFACT_NAME }} ethernet-status.app/
       - name: Upload artifact
         if: ${{ success() }}
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.ARTIFACT_NAME }}
-          path: dist/Build/Products/Release/*.app
+          path: ${{ env.ARTIFACT_NAME }}
 
   release:
       runs-on: ubuntu-latest
